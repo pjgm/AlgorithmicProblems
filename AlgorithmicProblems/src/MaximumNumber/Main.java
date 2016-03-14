@@ -11,14 +11,14 @@ public class Main {
 		int max = Integer.MIN_VALUE;
  
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
- 		reader.readLine();
-		while ((line = reader.readLine()) != null) {
-			String [] val_array = line.split(" ");
-			for(int i = 1; i < val_array.length; i++)
-				if (max < Integer.parseInt(val_array[i]))
-				    max = Integer.parseInt(val_array[i]);
+ 		int numberOfChildren = Integer.parseInt(reader.readLine());
+		while (numberOfChildren-- != 0 && (line = reader.readLine()) != null) {
+			String [] sticks = line.split(" ");
+			for(int i = 1; i <= Integer.parseInt(sticks[0]); i++)
+				if (max < Integer.parseInt(sticks[i]))
+				    max = Integer.parseInt(sticks[i]);
 		}
-		System.out.println(max);	
+		System.out.println(max);
 	}
 }
 
